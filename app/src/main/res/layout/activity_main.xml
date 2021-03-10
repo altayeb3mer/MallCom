@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
-
     <com.example.mallcom.Utils.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
