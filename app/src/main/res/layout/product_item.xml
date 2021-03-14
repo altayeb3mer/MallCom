@@ -16,6 +16,7 @@
         android:layout_height="150dp"
         android:src="@drawable/eeeee"/>
     <TextView
+        android:layout_marginTop="@dimen/margin_small_size"
         android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
