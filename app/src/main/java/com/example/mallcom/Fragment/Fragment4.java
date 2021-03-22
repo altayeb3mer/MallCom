@@ -29,7 +29,6 @@ public class Fragment4 extends Fragment {
         // Required empty public constructor
     }
 
-
     View view;
 
     RecyclerView recyclerView;
