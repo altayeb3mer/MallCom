@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.mallcom.Adapter.AdapterDepts;
 import com.example.mallcom.Adapter.AdapterDepts1;
@@ -30,6 +35,9 @@ public class Fragment2 extends Fragment {
     ArrayList<ModelDept> arrayList;
 
     View view;
+    Spinner spinnerDept;
+    ArrayList<String> arrayListSpinner;
+    ArrayAdapter<String> arrayAdapterSpinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +59,44 @@ public class Fragment2 extends Fragment {
         recyclerViewDept2 = view.findViewById(R.id.recyclerDept2);
 
         initAdapter();
+        spinnerDept = view.findViewById(R.id.spinner);
+        initSpinner();
+
+    }
+
+    private void initSpinner() {
+        spinnerDept = view.findViewById(R.id.spinner);
+        arrayListSpinner = new ArrayList<>();
+        arrayListSpinner.add("قسم1");
+        arrayListSpinner.add("قسم2");
+        arrayListSpinner.add("قسم3");
+        arrayListSpinner.add("قسم4");
+        arrayListSpinner.add("قسم5");
+
+        arrayAdapterSpinner = new ArrayAdapter<String>(context,R.layout.spinner_item,arrayListSpinner){
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                return super.getDropDownView(position, convertView, parent);
+            }
+        };
+        arrayAdapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDept.setAdapter(arrayAdapterSpinner);
+        spinnerDept.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+//                    s_month = "";
+                } else {
+//                    s_month = array_month[position];
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
 
     }
 
@@ -67,8 +113,6 @@ public class Fragment2 extends Fragment {
 
 
     }
-
-
 
     Context context;
     @Override

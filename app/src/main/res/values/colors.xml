@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="searchCardBg">#F7F7F7</color>
+    <color name="new_price_bg">#D8EDFA</color>
 </resources>

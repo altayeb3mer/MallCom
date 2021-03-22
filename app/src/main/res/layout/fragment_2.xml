@@ -64,23 +64,37 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_marginBottom="@dimen/margin_small_size"
-        android:background="@drawable/shape_dept_item_bg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/g1">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_margin="@dimen/margin_small_size"
-            android:id="@+id/recyclerDept1"
+        <Spinner
+            android:id="@+id/spinner"
+            android:background="@drawable/shape_dept_item_bg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/fragment2_dept"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"
-            android:orientation="vertical"/>
+            android:layout_height="50dp"
+            />
+        <LinearLayout
+            android:layout_marginTop="@dimen/margin_normal_size"
+            android:background="@drawable/shape_dept_item_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_margin="@dimen/margin_small_size"
+                android:id="@+id/recyclerDept1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/fragment2_dept"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="1"
+                android:orientation="vertical"/>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
