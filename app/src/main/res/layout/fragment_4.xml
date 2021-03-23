@@ -132,6 +132,9 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/txt_normal_size"
                 android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -20,7 +20,10 @@ import android.widget.Spinner;
 import com.example.mallcom.Adapter.AdapterDepts;
 import com.example.mallcom.Adapter.AdapterDepts1;
 import com.example.mallcom.Adapter.AdapterDepts2;
+import com.example.mallcom.Adapter.AdapterDet1;
+import com.example.mallcom.Adapter.AdapterDet2;
 import com.example.mallcom.Models.ModelDept;
+import com.example.mallcom.Models.ModelDetails;
 import com.example.mallcom.R;
 
 import java.util.ArrayList;
@@ -30,9 +33,9 @@ public class Fragment2 extends Fragment {
 
     RecyclerView recyclerViewDept1,recyclerViewDept2;
 
-    AdapterDepts1 adapterDepts1;
-    AdapterDepts2 adapterDepts2;
-    ArrayList<ModelDept> arrayList;
+    AdapterDet1 adapterDepts1;
+    AdapterDet2 adapterDepts2;
+    ArrayList<ModelDetails> arrayList;
 
     View view;
     Spinner spinnerDept;
@@ -51,7 +54,7 @@ public class Fragment2 extends Fragment {
     private void init() {
         arrayList = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            ModelDept modelDept = new ModelDept();
+            ModelDetails modelDept = new ModelDetails();
             modelDept.setId(i+"");
             arrayList.add(modelDept);
         }
@@ -106,8 +109,8 @@ public class Fragment2 extends Fragment {
         GridLayoutManager gridLayoutManager2 = new GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false);
         recyclerViewDept2.setLayoutManager(gridLayoutManager2);
 
-        adapterDepts1 = new AdapterDepts1(getActivity(),arrayList);
-        adapterDepts2 = new AdapterDepts2(getActivity(),arrayList);
+        adapterDepts1 = new AdapterDet1(getActivity(),arrayList);
+        adapterDepts2 = new AdapterDet2(getActivity(),arrayList);
         recyclerViewDept1.setAdapter(adapterDepts1);
         recyclerViewDept2.setAdapter(adapterDepts2);
 

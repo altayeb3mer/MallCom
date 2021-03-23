@@ -1,35 +1,32 @@
 package com.example.mallcom.Adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mallcom.Activity.ItemDetails;
-import com.example.mallcom.Models.ModelDept;
-import com.example.mallcom.Models.ModelOurNew;
+import com.example.mallcom.Models.ModelCart;
+import com.example.mallcom.Models.ModelDetails;
 import com.example.mallcom.R;
 
 import java.util.ArrayList;
 
 
-public class AdapterOurNew extends RecyclerView.Adapter<AdapterOurNew.ViewHolder> {
+public class AdapterDet1 extends RecyclerView.Adapter<AdapterDet1.ViewHolder> {
 
 //    Typeface tf;
     int current_page, last_page;
-    private ArrayList<ModelOurNew> arrayList;
+    private ArrayList<ModelDetails> arrayList;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     private Activity activity;
 //    RelativeLayout container;
-    public AdapterOurNew(Activity activity, ArrayList<ModelOurNew> r) {
+    public AdapterDet1(Activity activity, ArrayList<ModelDetails> r) {
         this.mInflater = LayoutInflater.from(activity);
         this.arrayList = r;
         this.activity = activity;
@@ -37,7 +34,7 @@ public class AdapterOurNew extends RecyclerView.Adapter<AdapterOurNew.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.hot_offer_item, parent, false);
+        View view = mInflater.inflate(R.layout.table_det1, parent, false);
 
         return new ViewHolder(view);
     }
@@ -45,7 +42,7 @@ public class AdapterOurNew extends RecyclerView.Adapter<AdapterOurNew.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        final ModelOurNew item = arrayList.get(position);
+        final ModelDetails item = arrayList.get(position);
 //        try {
 //            Glide.with(activity).load(Api.ROOT_URL+item.getImage())
 //                    .into(holder.imageView);
@@ -53,13 +50,13 @@ public class AdapterOurNew extends RecyclerView.Adapter<AdapterOurNew.ViewHolder
 //            e.printStackTrace();
 //        }
 //
-        holder.container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, ItemDetails.class);
-                activity.startActivity(intent);
-            }
-        });
+//        holder.container.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(activity, DeptsActivity.class);
+//                activity.startActivity(intent);
+//            }
+//        });
 //        holder.textViewTitle.setText(item.getTitle());
 //        holder.textViewPrice.setText(item.getPrice()+" "+"جنيه سوداني");
 //
@@ -94,14 +91,14 @@ public class AdapterOurNew extends RecyclerView.Adapter<AdapterOurNew.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imageView;
-        RelativeLayout container;
+        ConstraintLayout container;
         TextView textViewTitle, textViewPrice;
 
         ViewHolder(View itemView) {
             super(itemView);
 //            layDel = itemView.findViewById(R.id.layDel);
 //            imageView = itemView.findViewById(R.id.img);
-            container = itemView.findViewById(R.id.container);
+//            container = itemView.findViewById(R.id.container);
 //            textViewTitle = itemView.findViewById(R.id.title);
 //            textViewPrice = itemView.findViewById(R.id.price);
 

@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mallcom.Models.ModelDept;
+import com.example.mallcom.Models.ModelDetails;
 import com.example.mallcom.R;
 
 import java.util.ArrayList;
@@ -20,12 +21,12 @@ public class AdapterDepts2 extends RecyclerView.Adapter<AdapterDepts2.ViewHolder
 
 //    Typeface tf;
     int current_page, last_page;
-    private ArrayList<ModelDept> arrayList;
+    private ArrayList<ModelDetails> arrayList;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     private Activity activity;
 //    RelativeLayout container;
-    public AdapterDepts2(Activity activity, ArrayList<ModelDept> r) {
+    public AdapterDepts2(Activity activity, ArrayList<ModelDetails> r) {
         this.mInflater = LayoutInflater.from(activity);
         this.arrayList = r;
         this.activity = activity;
@@ -41,7 +42,7 @@ public class AdapterDepts2 extends RecyclerView.Adapter<AdapterDepts2.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        final ModelDept item = arrayList.get(position);
+        final ModelDetails item = arrayList.get(position);
 //        try {
 //            Glide.with(activity).load(Api.ROOT_URL+item.getImage())
 //                    .into(holder.imageView);
